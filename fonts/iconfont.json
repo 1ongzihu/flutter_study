@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "38219469",
+      "name": "圣诞礼盒",
+      "font_class": "shengdanlihe",
+      "unicode": "e6fa",
+      "unicode_decimal": 59130
+    },
+    {
+      "icon_id": "38219470",
+      "name": "圣诞雪帽",
+      "font_class": "shengdanxuemao",
+      "unicode": "e6fb",
+      "unicode_decimal": 59131
+    }
+  ]
+}
