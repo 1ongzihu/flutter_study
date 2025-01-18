@@ -17,15 +17,36 @@ class _TabsState extends State<Tabs> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red,
         title: Text("Flutter app"),
       ),
       drawer: Drawer(
-        child: Text("左侧侧边栏"),
-      ),
+          child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: UserAccountsDrawerHeader(
+                    accountName: Text("牛牛"),
+                    accountEmail: Text("2154321@qq.com"),
+                    currentAccountPicture: CircleAvatar(
+                      backgroundImage: NetworkImage("https://www.itying.com/images/flutter/6.png"),
+                    ),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                          image: NetworkImage(
+                              "https://www.itying.com/images/flutter/7.png")),
+                    )),
+              )
+            ],
+          )
+        ],
+      )),
       endDrawer: Drawer(
         child: Text("右侧侧边栏"),
       ),
-
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
@@ -45,19 +66,17 @@ class _TabsState extends State<Tabs> {
         width: 60,
         padding: EdgeInsets.all(5),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30)
-        ),
+            color: Colors.white, borderRadius: BorderRadius.circular(30)),
         child: FloatingActionButton(
-        backgroundColor: _currentIndex == 1 ? Colors.blue : Colors.amberAccent,
-        shape: CircleBorder(),
-        child: Icon(Icons.add),
-        onPressed: () {
-          setState(() {
-            _currentIndex = 1;
-          });
-        }
-        ),
+            backgroundColor:
+                _currentIndex == 1 ? Colors.blue : Colors.amberAccent,
+            shape: CircleBorder(),
+            child: Icon(Icons.add),
+            onPressed: () {
+              setState(() {
+                _currentIndex = 1;
+              });
+            }),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
